@@ -11,22 +11,12 @@ if (!isset($_SESSION['cliente_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Meus Pedidos - Cafeteria Gourmet Digital</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Cafeteria Gourmet Digital</h1>
-    <nav>
-        <a href="index.php?controller=loja">Loja</a>
-        <a href="index.php?controller=loja&action=carrinho">Carrinho</a>
-        <a href="index.php?controller=loja&action=meusPedidos" class="ativo">Meus pedidos</a>
-        <a href="index.php?controller=loja&action=logout">
-            Sair (<?= htmlspecialchars($_SESSION['cliente_nome']); ?>)
-        </a>
-    </nav>
-</header>
+<?php include 'cabecalho_loja.php'; ?>
 
 <main>
 
@@ -39,8 +29,10 @@ if (!isset($_SESSION['cliente_id'])) {
 
     <div class="quadro">
 
-        <?php if (count($pedidos) === 0): ?>
+        <?php if (empty($pedidos)): ?>
+
             <p>Você ainda não fez nenhum pedido.</p>
+
         <?php else: ?>
 
             <table>
@@ -54,11 +46,12 @@ if (!isset($_SESSION['cliente_id'])) {
                 </thead>
 
                 <tbody>
+
                 <?php foreach ($pedidos as $pedido): ?>
                     <tr>
 
                         <td>
-                            <a href="index.php?controller=loja&action=detalhesPedido&id=<?= $pedido['id'] ?>">
+                            <a href="index.php?controller=loja&action=detalhesPedido&id=<?= $pedido['id']; ?>">
                                 #<?= (int)$pedido['id']; ?>
                             </a>
                         </td>
@@ -68,7 +61,9 @@ if (!isset($_SESSION['cliente_id'])) {
                         </td>
 
                         <td>
-                            <span class="status"><?= htmlspecialchars(ucfirst($pedido['status'])); ?></span>
+                            <span class="status">
+                                <?= htmlspecialchars(ucfirst($pedido['status'])); ?>
+                            </span>
                         </td>
 
                         <td>
@@ -77,8 +72,8 @@ if (!isset($_SESSION['cliente_id'])) {
 
                     </tr>
                 <?php endforeach; ?>
-                </tbody>
 
+                </tbody>
             </table>
 
         <?php endif; ?>

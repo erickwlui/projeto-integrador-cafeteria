@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# IDEs / OS
+.vscode/
+.idea/
+Thumbs.db
+
+# PHP tooling
+vendor/
+node_modules/
+composer.lock
+package-lock.json

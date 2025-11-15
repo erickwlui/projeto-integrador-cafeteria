@@ -1,8 +1,7 @@
-/* ===== PALETA ===== */
 :root {
-    --cor-primaria: #6b3e26; /* Café forte */
+    --cor-primaria: #6b3e26;
     --cor-primaria-escura: #4b2b1a;
-    --cor-secundaria: #d1a774; /* Caramelo */
+    --cor-secundaria: #d1a774;
     --cor-secundaria-clara: #f7e8d0;
 
     --cinza-claro: #f5f5f5;
@@ -15,7 +14,6 @@
     --radius: 10px;
 }
 
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +27,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
 header {
     background: var(--cor-primaria);
     color: var(--branco);
@@ -62,14 +59,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ===== MAIN ===== */
 main {
     max-width: 1150px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
-
-/* ===== CARDS ===== */
 
 .quadro,
 .hero {
@@ -88,8 +82,6 @@ main {
 .hero h2 {
     font-size: 2rem;
 }
-
-/* ===== BOTÕES ===== */
 
 .botao {
     display: inline-block;
@@ -131,8 +123,6 @@ main {
     transform: translateY(-2px);
 }
 
-/* ===== SESSÕES ===== */
-
 .topo-sessao {
     display: flex;
     justify-content: space-between;
@@ -143,8 +133,6 @@ main {
 .topo-sessao h2 {
     margin-bottom: 0.4rem;
 }
-
-/* ===== TABELAS ===== */
 
 table {
     width: 100%;
@@ -168,8 +156,6 @@ tbody tr:hover {
     background: var(--cinza-claro);
 }
 
-/* ===== STATUS BADGES ===== */
-
 .status {
     background: var(--cor-secundaria-clara);
     padding: 0.35rem 0.7rem;
@@ -178,8 +164,6 @@ tbody tr:hover {
     font-weight: 600;
     color: var(--cor-primaria);
 }
-
-/* ===== FORMULÁRIOS ===== */
 
 .formulario label {
     display: block;
@@ -195,8 +179,6 @@ tbody tr:hover {
     margin-top: 0.3rem;
     font-size: 1rem;
 }
-
-/* ===== ALERTAS ===== */
 
 .alerta {
     padding: 1rem;
@@ -217,15 +199,11 @@ tbody tr:hover {
     color: #a12727;
 }
 
-/* ===== LISTA DE ITENS ===== */
-
 .lista-itens {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-
-/* ===== MOBILE ===== */
 
 @media (max-width: 700px) {
     .topo-sessao {

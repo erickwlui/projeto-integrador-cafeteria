@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cafeteria Gourmet Digital</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header>
@@ -13,6 +13,8 @@
         <a href="index.php?controller=cliente&action=listar">Clientes</a>
         <a href="index.php?controller=produto&action=listar">Produtos</a>
         <a href="index.php?controller=pedido&action=listar">Pedidos</a>
+        <a href="index.php?controller=loja">Loja</a>
+        <a href="admin/index.php">Painel Admin</a>
     </nav>
 </header>
 <main>
@@ -22,7 +24,9 @@
         <div class="cta">
             <a class="botao primario" href="index.php?controller=cliente&action=listar">Começar pelos clientes</a>
             <a class="botao" href="index.php?controller=produto&action=listar">Ver produtos</a>
-        </div>
+            <a class="botao secundario" href="index.php?controller=loja">Ir para a loja</a>
+            <a class="botao" href="admin/index.php">Acessar admin</a>
+     </div>
     </section>
 </main>
 </body>

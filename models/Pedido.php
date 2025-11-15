@@ -64,4 +64,16 @@ class Pedido
 
         return $pedido ?: null;
     }
+
+    public function updateStatus(int $id, string $status): bool
+    {
+    $stmt = $this->pdo->prepare(
+        "UPDATE pedido SET status = :status WHERE id = :id"
+    );
+
+    return $stmt->execute([
+        'id' => $id,
+        'status' => $status
+    ]);
+    }
 }

@@ -1,0 +1,160 @@
+/* ===========================
+   ESTILO BASE
+=========================== */
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f2f2f7;
+    margin: 0;
+    color: #333;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+header nav a {
+    color: #fff;
+    margin-right: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: .85;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+/* ===========================
+   TABELAS
+=========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th {
+    background: #ededed;
+    padding: 12px;
+    font-weight: 600;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: #fafafa;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+button, .btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    background: #2c2c2c;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+button:hover, .btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #c62828;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+/* ===========================
+   LOGIN
+=========================== */
+.login-box {
+    width: 360px;
+    margin: 90px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-box button {
+    width: 100%;
+}
+
+/* ===========================
+   ERROS
+=========================== */
+.erro {
+    color: #c10000;
+    margin-bottom: 12px;
+    font-weight: bold;
+    background: #ffebeb;
+    border-left: 4px solid #c10000;
+    padding: 8px;
+    border-radius: 4px;
+}
