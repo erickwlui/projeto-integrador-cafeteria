@@ -22,6 +22,21 @@ class Cliente
         return $cliente ?: null;
     }
 
+    public function login(string $email, string $senha): ?array
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT * FROM cliente WHERE email = :email AND senha = :senha'
+        );
+
+        $stmt->execute([
+            'email' => $email,
+            'senha' => $senha
+        ]);
+
+        $cliente = $stmt->fetch();
+        return $cliente ?: null;
+    }
+
     public function create(array $dados): bool
     {
         $stmt = $this->pdo->prepare(
