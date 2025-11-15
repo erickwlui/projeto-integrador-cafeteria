@@ -229,7 +229,7 @@ class LojaController
         $_SESSION['carrinho'] = [];
 
         // Redireciona para a página de sucesso
-        header("Location: index.php?controller=loja&action=sucesso&id=" . $pedidoId);
+        header("Location: index.php?controller=payment&action=pix&id=" . $pedidoId);
         exit;
     }
 

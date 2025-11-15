@@ -1,36 +1,41 @@
+<?php
+
+
+// Usuário precisa estar logado
+if (!isset($_SESSION['cliente_id'])) {
+    header("Location: index.php?controller=loja&action=login");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Checkout - Cafeteria Gourmet Digital</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
 </head>
+
 <body>
 
-<header>
-    <h1>Cafeteria Gourmet Digital</h1>
-    <nav>
-        <a href="index.php?controller=loja">Loja</a>
+<?php include __DIR__ . '/cabecalho_loja.php'; ?>
 
-        <?php if (isset($_SESSION['cliente_id'])): ?>
-            <a href="index.php?controller=loja&action=carrinho">Carrinho</a>
-            <a href="index.php?controller=loja&action=logout">Sair (<?= htmlspecialchars($_SESSION['cliente_nome']) ?>)</a>
-        <?php else: ?>
-            <a href="index.php?controller=loja&action=login">Login</a>
-        <?php endif; ?>
-    </nav>
-</header>
+<main class="container">
 
-<main>
     <section class="topo-sessao">
         <div>
             <h2>Checkout</h2>
-            <p>Confirme as informações antes de finalizar o pedido.</p>
+            <p>Confirme as informações antes de finalizar seu pedido.</p>
         </div>
+
+        <a href="index.php?controller=loja&action=carrinho" class="botao">
+            &larr; Voltar ao carrinho
+        </a>
     </section>
 
+    <!-- Dados do cliente -->
     <div class="quadro">
         <h3>Dados do Cliente</h3>
+
         <p><strong>Nome:</strong> <?= htmlspecialchars($cliente['nome']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($cliente['email']) ?></p>
         <p><strong>Endereço:</strong> <?= htmlspecialchars($cliente['endereco']) ?></p>
@@ -38,6 +43,7 @@
 
     <br>
 
+    <!-- Resumo do pedido -->
     <div class="quadro">
         <h3>Resumo do Pedido</h3>
 
@@ -53,9 +59,11 @@
             <tbody>
             <?php
             $total = 0;
+
             foreach ($_SESSION['carrinho'] as $id => $qtd):
                 foreach ($produtos as $p):
                     if ($p['id'] == $id):
+
                         $subtotal = $p['preco'] * $qtd;
                         $total += $subtotal;
             ?>
@@ -82,6 +90,7 @@
 
     <br>
 
+    <!-- Botão de finalizar -->
     <form action="index.php?controller=loja&action=finalizarPedido" method="post">
         <button class="botao primario" type="submit">Finalizar Pedido</button>
     </form>

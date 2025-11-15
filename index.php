@@ -28,7 +28,11 @@ switch ($controller) {
     case 'home':
         $controllerInstance = null;
         break;
-
+        
+    case 'payment':
+        require_once __DIR__ . '/controllers/PaymentController.php';
+        $controllerInstance = new PaymentController($pdo);
+        break;
     default:
         http_response_code(404);
         echo '<h1>404 - Página não encontrada</h1>';

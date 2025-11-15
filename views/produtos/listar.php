@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Produtos - Cafeteria Gourmet Digital</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header>
