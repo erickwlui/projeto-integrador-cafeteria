@@ -1,4 +1,4 @@
- <?php
+<?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -12,6 +12,10 @@ $acaoAtual = $_GET['action'] ?? 'index';
         <h1 class="logo-loja">Cafeteria Gourmet Digital</h1>
 
         <nav class="menu-loja">
+            <a href="index.php" class="link-dashboard">
+                Painel inicial
+            </a>
+
             <a href="index.php?controller=loja"
                class="<?= $acaoAtual === 'index' ? 'ativo' : '' ?>">
                 Loja

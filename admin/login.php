@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <head>
     <meta charset="UTF-8">
     <title>Login Admin</title>
-    <link rel="stylesheet" href="/admin/assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>

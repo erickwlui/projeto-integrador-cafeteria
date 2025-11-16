@@ -15,7 +15,8 @@ class AdminController
     protected function requireAdmin()
     {
         if (!isset($_SESSION['admin_id'])) {
-            header("Location: /admin/login.php");
+            $basePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
+            header("Location: {$basePath}/login.php");
             exit;
         }
     }
