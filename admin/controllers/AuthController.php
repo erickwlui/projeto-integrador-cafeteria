@@ -25,7 +25,13 @@ class AuthController
         if ($usuario === "admin" && $senha === "1234") {
             $_SESSION['admin_id']   = 1;
             $_SESSION['admin_nome'] = "Administrador";
-            header("Location: /admin/index.php");
+
+            $basePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
+            if ($basePath === '.' || $basePath === DIRECTORY_SEPARATOR) {
+                $basePath = '';
+            }
+
+            header("Location: {$basePath}/index.php");
             exit;
         }
 
@@ -36,7 +42,11 @@ class AuthController
     public function logout()
     {
         session_destroy();
-        header("Location: login.php");
+        $basePath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
+        if ($basePath === '.' || $basePath === DIRECTORY_SEPARATOR) {
+            $basePath = '';
+        }
+        header("Location: {$basePath}/login.php");
         exit;
     }
 }

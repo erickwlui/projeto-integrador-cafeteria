@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../helpers/admin_guard.php';
 require_once __DIR__ . '/../models/Pedido.php';
 require_once __DIR__ . '/../models/ItemPedido.php';
 
@@ -9,6 +10,7 @@ class PedidoController
 
     public function __construct(PDO $pdo)
     {
+        require_admin_auth();
         $this->pedidoModel = new Pedido($pdo);
         $this->itemPedidoModel = new ItemPedido($pdo);
     }

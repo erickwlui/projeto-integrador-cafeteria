@@ -1,4 +1,4 @@
-<?php?>
+<?php $imagemPadrao = 'assets/imagens/produtos/default.png'; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,6 +26,14 @@
         .produto-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .produto-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         .produto-card h3 {
@@ -66,6 +74,8 @@
             <div class="produto-card">
 
                 <div>
+                    <img src="<?= htmlspecialchars($imagemPadrao); ?>"
+                         alt="Foto de <?= htmlspecialchars($p['nome']); ?>">
                     <h3><?= htmlspecialchars($p['nome']); ?></h3>
 
                     <p><?= htmlspecialchars($p['descricao']); ?></p>

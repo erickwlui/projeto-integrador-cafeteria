@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../helpers/admin_guard.php';
 require_once __DIR__ . '/../models/Cliente.php';
 
 class ClienteController
@@ -7,6 +8,7 @@ class ClienteController
 
     public function __construct(PDO $pdo)
     {
+        require_admin_auth();
         $this->clienteModel = new Cliente($pdo);
     }
 
