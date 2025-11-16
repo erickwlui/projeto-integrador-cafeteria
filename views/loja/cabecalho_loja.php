@@ -9,7 +9,7 @@ $acaoAtual = $_GET['action'] ?? 'index';
 
 <header class="header-loja">
     <div class="container-loja">
-        <h1 class="logo-loja">Cafeteria Gourmet Digital</h1>
+        <h1 class="brand-title">Cafeteria Gourmet Digital</h1>
 
         <nav class="menu-loja">
             <a href="index.php" class="link-dashboard">

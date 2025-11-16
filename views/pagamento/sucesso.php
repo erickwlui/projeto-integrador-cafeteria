@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento confirmado - Cafeteria</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 <?php include __DIR__ . '/../loja/cabecalho_loja.php'; ?>
 
 <main class="container">
@@ -24,3 +32,5 @@
     </div>
 
 </main>
+</body>
+</html>

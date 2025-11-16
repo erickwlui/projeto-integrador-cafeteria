@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-    <h1>Cafeteria Gourmet Digital</h1>
+    <h1 class="brand-title">Cafeteria Gourmet Digital</h1>
     <nav>
         <a href="index.php" class="ativo">Visão geral</a>
         <a href="index.php?controller=loja">Experiência do cliente</a>
@@ -31,7 +31,7 @@
             <p>Cadastre clientes, mantenha o catálogo de produtos, acompanhe pedidos e monitore pagamentos.</p>
             <div class="acoes">
                 <a class="botao primario" href="index.php?controller=cliente&action=listar">Clientes</a>
-                <a class="botao" href="index.php?controller=produto&action=listar">Produtos</a>
+                <a class="botao secundario" href="index.php?controller=produto&action=listar">Produtos</a>
                 <a class="link-inline" href="admin/index.php?controller=pedidos&action=listar">Pedidos no admin →</a>
             </div>
         </article>

@@ -15,7 +15,7 @@ $acaoFormulario = $estaEditando
 </head>
 <body>
 <header>
-    <h1>Cafeteria Gourmet Digital</h1>
+    <h1 class="brand-title">Cafeteria Gourmet Digital</h1>
     <nav>
         <a href="index.php">Início</a>
         <a href="index.php?controller=cliente&action=listar">Clientes</a>
