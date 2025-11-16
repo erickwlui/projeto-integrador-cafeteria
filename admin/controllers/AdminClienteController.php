@@ -67,9 +67,14 @@ class AdminClienteController extends AdminController
     public function excluir()
     {
         $id = (int)$_GET['id'];
-        $this->clienteModel->delete($id);
-
-        header("Location: index.php?controller=clientes&action=listar");
-        exit;
+        try {
+            $this->clienteModel->delete($id);
+            $this->redirectComAviso('clientes', 'listar', 'Cliente excluído com sucesso!');
+        } catch (PDOException $e) {
+            $mensagem = $e->getCode() === '23000'
+                ? 'Não é possível excluir o cliente porque existem pedidos associados.'
+                : 'Erro ao excluir o cliente. Tente novamente.';
+            $this->redirectComAviso('clientes', 'listar', $mensagem, 'erro');
+        }
     }
 }

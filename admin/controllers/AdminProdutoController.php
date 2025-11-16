@@ -67,9 +67,14 @@ class AdminProdutoController extends AdminController
     public function excluir()
     {
         $id = (int)$_GET['id'];
-        $this->produtoModel->delete($id);
-
-        header("Location: index.php?controller=produtos&action=listar");
-        exit;
+        try {
+            $this->produtoModel->delete($id);
+            $this->redirectComAviso('produtos', 'listar', 'Produto excluído com sucesso!');
+        } catch (PDOException $e) {
+            $mensagem = $e->getCode() === '23000'
+                ? 'Não é possível excluir o produto porque ele está vinculado a pedidos.'
+                : 'Erro ao excluir o produto. Tente novamente.';
+            $this->redirectComAviso('produtos', 'listar', $mensagem, 'erro');
+        }
     }
 }

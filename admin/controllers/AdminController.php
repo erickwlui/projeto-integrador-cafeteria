@@ -21,6 +21,19 @@ class AdminController
         }
     }
 
+    protected function redirectComAviso(string $controller, string $action, string $mensagem, string $tipo = 'sucesso'): void
+    {
+        $query = http_build_query([
+            'controller' => $controller,
+            'action' => $action,
+            'mensagem' => $mensagem,
+            'tipo' => $tipo,
+        ]);
+
+        header('Location: index.php?' . $query);
+        exit;
+    }
+
     public function index()
     {
         $totalProdutos = $this->pdo->query("SELECT COUNT(*) FROM produto")->fetchColumn();
