@@ -67,7 +67,7 @@ if (!isset($_SESSION['cliente_id'])) {
                         </td>
 
                         <td>
-                            <?= date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?>
+                            <?= date('d/m/Y', strtotime($pedido['data_pedido'])); ?>
                         </td>
 
                     </tr>

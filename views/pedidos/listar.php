@@ -60,7 +60,7 @@
                         </td>
                         <td><strong>R$ <?= number_format($pedido['total'], 2, ',', '.'); ?></strong></td>
                         <td><span class="status"><?= htmlspecialchars(ucfirst($pedido['status'])); ?></span></td>
-                        <td><?= date('d/m/Y H:i', strtotime($pedido['data_pedido'])); ?></td>
+                        <td><?= date('d/m/Y', strtotime($pedido['data_pedido'])); ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
